@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purna Gallery</title>
+    <link rel="icon" href="images/about.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        p.subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #6e8efb;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: #f8f8f8;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .item-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .item-category {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .download-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: white;
+            color: #333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item:hover .download-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .download-btn:hover {
+            background-color: #6e8efb;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Designer Photo Fit</h1>
+            <p class="subtitle">Explore our curated collection of stunning, high-quality designer photos ready for your next project.</p>
+            <a href="#" class="btn">Browse Collection</a>
+        </header>
+        
+        <div class="gallery">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="desi/social media.jpg" alt="Minimalist Interior Design">
+                <div class="item-overlay">
+                    <h3 class="item-title">Minimalist Interior</h3>
+                    <p class="item-category">Interior Design</p>
+                </div>
+                <a href="desi/social media.jpg" download="" class="download-btn">↓</a>
+            </div>
+            
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="desi/social media poster.jpg" alt="Modern Architecture">
+                <div class="item-overlay">
+                    <h3 class="item-title">Urban Geometry</h3>
+                    <p class="item-category">Architecture</p>
+                </div>
+                <a href="desi/social media poster.jpg" download="" class="download-btn">↓</a>
+            </div>
+            
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="desi/id card.jpg"Fashion Photography">
+                <div class="item-overlay">
+                    <h3 class="item-title">Spring Collection</h3>
+                    <p class="item-category">Fashion</p>
+                </div>
+                <a href="desi/id card.jpg" download="" class="download-btn">↓</a>
+            </div>
+            
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="desi/CU.jpg" alt="Nature Photography">
+                <div class="item-overlay">
+                    <h3 class="item-title">Mountain Sunrise</h3>
+                    <p class="item-category">Nature</p>
+                </div>
+                <a href="desi/CU.jpg" download="" class="download-btn">↓</a>
+            </div>
+            
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="desi/compa.jpg" alt="Product Photography">
+                <div class="item-overlay">
+                    <h3 class="item-title">Ceramic Collection</h3>
+                    <p class="item-category">Product</p>
+                </div>
+                <a href="desi/compa.jpg" download="" class="download-btn">↓</a>
+            </div>
+            
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="desi/hed.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/hed.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/edu.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/edu.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/fly.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/fly.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/shop.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/shop.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/card.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/card.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/pu.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/pu.jpg" download="" class="download-btn">↓</a>
+            </div>
+
+            <div class="gallery-item">
+                <img src="desi/d.jpg" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3 class="item-title">Color Theory</h3>
+                    <p class="item-category">Abstract</p>
+                </div>
+                <a href="desi/d.jpg" download="" class="download-btn">↓</a>
+            </div>
+        </div>
+        
+      
+    </div>
+    
+<div class="container_forma_header" id="contact">
+    <div class="particles"></div>
+    
+    <div class="form-header">
+      <h1>Contact Form</h1>
+      <p>Fill out the form below to register for our courses</p>
+      <div class="wave"></div>
+    </div>
+    
+    <form id="contactForm">
+      <div class="form-content">
+        <div>
+          <div class="form-section">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" placeholder="Your full address" required></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2>CV Upload</h2>
+            <div class="form-group">
+              <label for="cv">Upload your CV (PDF only)</label>
+              <div class="file-input-container">
+                <label class="file-input-label">
+                  Choose File
+                  <input type="file" id="cv" name="cv" class="file-input" accept=".pdf" required>
+                </label>
+              </div>
+              <div class="file-name" id="file-name">No file chosen</div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="form-section">
+            <h2>Course Selection</h2>
+            <div class="form-group">
+              <label for="course">Select Course</label>
+              <select id="course" name="course" required>
+                <option value="" disabled selected>Choose a course</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphics Design">Graphics Design</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="App Development">App Development</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="SEO & Content Marketing">SEO & Content Marketing</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="duration">Course Duration</label>
+              <select id="duration" name="duration" required>
+                <option value="" disabled selected>Select duration</option>
+                <option value="6 months">6 months</option>
+                <option value="1 year">1 year</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject/Topic</label>
+              <input type="text" id="subject" name="subject" placeholder="Specific subject or topic of interest">
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2>Additional Information</h2>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell us more about yourself and your expectations"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="submit-container">
+        <button type="submit" class="btn" id="submitBtn">Proceed to Payment</button>
+      </div>
+      
+      <div class="success-message" id="success-message">
+        <p>Your registration has been successfully submitted! We'll contact you shortly.</p>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Payment Screen Popup -->
+  <div class="payment-screen" id="payment-screen">
+    <div class="payment-content">
+      <div class="payment-header">
+        <h2>Payment Details</h2>
+        <p>Please confirm your payment information</p>
+      </div>
+      
+      <div class="payment-details">
+        <div class="payment-row">
+          <div class="payment-label">Selected Course:</div>
+          <div class="payment-value" id="selected-course">Web Development</div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Duration:</div>
+          <div class="payment-value" id="selected-duration">6 months</div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Course Fee:</div>
+          <div class="payment-value" id="course-fee">$899</div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Tax (5%):</div>
+          <div class="payment-value" id="tax-amount">$44.95</div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Total Amount:</div>
+          <div class="payment-value" id="total-amount">$943.95</div>
+        </div>
+      </div>
+      
+      <div class="payment-methods">
+        <div class="payment-method active" data-method="credit-card">
+          <img src="images/payp.jpg" alt="Credit Card">
+        </div>
+        <div class="payment-method" data-method="paypal">
+          <img src="images/payp.jpg" alt="PayPal">
+        </div>
+        <div class="payment-method" data-method="bank">
+          <img src="images/payp.jpg" alt="Bank Transfer">
+        </div>
+      </div>
+      
+      <div class="payment-actions">
+        <button class="cancel-btn" id="cancel-payment">Cancel</button>
+        <button class="confirm-btn" id="confirm-payment">Confirm Payment</button>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+  <!-- footer -->
+
+
+ 
+
+<footer class="footer-section">
+    <div class="container">
+        <!-- Main Footer Navigation -->
+        <div class="footer-nav">
+            <!-- About Column -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Purna</h5>
+                <ul class="footer-links">
+                    <li><a href="#">About Purna</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Purna Studios Social Impact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Supply Chain Transparency</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Purna Global Sites</a></li>
+                </ul>
+            </div>
+
+            <!-- My Account Column -->
+            <div class="footer-column">
+                <h5 class="footer-heading">My Purna</h5>
+                <ul class="footer-links">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Design Insider</a></li>
+                    <li><a href="#">Rewards Program</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">Work with Purna – Join Now</a></li>
+                    <li><a href="#">Premium Support</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div class="footer-column">
+                <h5 class="footer-heading">Help & FAQs</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Online Ordering</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">International Shipments</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Shop Column -->
+            <div class="footer-column">
+                <h5 class="footer-heading">Ways to Shop</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Just Arrived</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Office Locations, Events & Classes</a></li>
+                    <li><a href="#">Book a Consultation</a></li>
+                    <li><a href="#">Purna inside Marketplace</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Email Subscription -->
+        <div class="footer-subscribe">
+            <div class="subscribe-text">Sign up for Purna Emails</div>
+            <div class="subscribe-form">
+                <input type="email" class="subscribe-input" placeholder="Email Address">
+                <button class="subscribe-button" type="button">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media and Copyright -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/Purnakhatri630" class="social-icon" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/purn.akhatri/" class="social-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/purna-bahadur-khatri-b6982a320/" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a target="_blank" href="https://github.com/purnakhatriofficial" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <small>
+                    Copyright © 2024 Purna Bahadur Khatri, Inc. All rights reserved. 
+                    <a href="#">Terms of Use</a> | 
+                    <a href="#">Privacy Policy</a>
+                </small>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <small>1-877-PURNA-4873 (+977 9829839069) | TTY (+977 9749766719)</small>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div class="back-to-top">
+            <a href="#" title="Back to Top">
+                <i class="fas fa-arrow-up"></i>
+                <span>TOP</span>
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
